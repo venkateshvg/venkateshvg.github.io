@@ -1,0 +1,71 @@
+/* The page is divided into 4. header navigation bar, main content
+and footer. Theme used is cricket.*/
+
+body{
+	background-color: #000000;
+	
+}
+
+#holder{
+	width: 1200px;
+	margin: 20px auto;
+}
+
+/*     H  E  A  D  E  R    */
+header{
+	width: 1200px;
+	height: 200px;
+	background-image: url("perfe.jpg");
+}
+
+/*     N A V I G A T I O N    */
+#hello{
+	width: auto;
+	height: 40px;
+	background-color: green;
+}
+#list{
+	width: auto;
+	height: 30px;
+	background-color: white;
+	margin: 0;
+	padding-top: 5px;
+}
+#list li{
+	display: inline;
+	float: right;
+	padding-right: 20px;
+	color: black;
+}
+
+/*     M A I N     */
+#content{
+	width: 1200px;
+	height: 480px;
+	background-color: grey;
+}
+#big{
+	margin: 0;
+}
+#contenttxt{
+	font-size: 100%;
+	margin: 0;
+	font-family:calibri;
+	padding: 20px 0 0 250px;
+}
+#demo{
+	padding: 20px 0 0 250px;
+}
+#small
+{
+	font-family:calibri;
+padding: 20px 0 0 250px;}
+
+/*    F  O  O  T  E  R     */
+footer{
+	width: auto;
+	height: 30px;
+	background-color: green;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}

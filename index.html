@@ -1,0 +1,93 @@
+<!DOCTYPE.html>
+<html>
+<head>
+<title>miracle</title>
+<link href=".\styles1.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<div id="holder">
+
+<header></header>
+
+<div id="hello">
+
+<ul id="list">
+
+	<li><a href=".\contact.html">Contact</a></li> 
+	<li><a href=".\about.html">About</a></li> 
+	<li><a href="#">Home</a></li> 
+	</ul>
+</div>
+	
+<div id= "content">
+
+
+<p id="contenttxt">
+
+TODAY'S QUESTION <br><br> 
+
+Who among the following introduced the world to World Series Cricket in 1977?<br><br>
+
+1. Kerry Packer<br><br>
+
+2. Len Hutton<br><br>
+
+3. Frank Worrell<br><br>
+
+4. Thomas Hughes<br><br>
+
+<input id="numb">
+<button type= "button" onclick="myFunction()">submit</button>
+</p>
+
+
+
+
+
+
+
+<p id="demo"></p>
+
+
+<script>
+
+function myFunction(){
+
+//input id takes input from the user which is compared with the right answer.
+//The above function checks whether answer is right.
+var x1="Kerry Packer";
+var x2 = document.getElementById("numb").value;
+if(x1!==x2)
+{
+document.getElementById("demo").innerHTML=" Wrong. The answer is Kerry Packer";
+}
+else{
+document.getElementById("demo").innerHTML=" Good job";
+}
+}
+
+
+</script>
+<p id="small">
+
+THIS WEEK'S GAME:<br><br>
+<a href="finaltest.html">Memory Game</a>
+</p>
+
+
+</div>
+
+
+<footer></footer>
+
+</body>
+
+</html>
+
+
+
+
+
+

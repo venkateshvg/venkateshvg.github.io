@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/*styling elements*/
+div#board{
+	background:#CCC;
+	border:#999 1px solid;
+	width: 375px;
+	height:375px;
+	padding:24px;
+	margin:0px auto;
+}
+div#board > div{
+	background :#000000;
+	border:#000 1px solid;
+	width:30px;
+	height: 30px;
+	float:left;
+	margin:10px;
+	padding:20px;
+	font-size:30px;
+	cursor:pointer;
+	text-align:center;
+}
+</style>
+<script>
+
+var memarray = ['1','1','2','2','3','3','4','4','5','5','6','6','7','7','8','8'];
+var values = [];
+var memids = [];
+var tflipped = 0;
+/*function to shuffle the tiles*/ 
+Array.prototype.memory_tile_shuffle = function(){
+    var i = this.length, j, temp;
+    while(--i > 0){
+        j = Math.floor(Math.random() * (i+1));
+        temp = this[j];
+        this[j] = this[i];
+        this[i] = temp;
+    }
+}
+function nBoard(){
+/*function to generate new board*/ 
+	tflipped = 0;
+	var output = '';
+    memarray.memory_tile_shuffle();
+	for(var i = 0; i < memarray.length; i++){
+		output += '<div id="tile_'+i+'" onclick="flipTile(this,\''+memarray[i]+'\')"></div>';
+	}
+	document.getElementById('board').innerHTML = output;
+}
+function flipTile(tile,val){
+	/*function to flip tiles*/
+	if(tile.innerHTML == "" && values.length < 2){
+		tile.style.background = '#FFF';
+		tile.innerHTML = val;
+		if(values.length == 0){
+			values.push(val);
+			memids.push(tile.id);
+		} else if(values.length == 1){
+			values.push(val);
+			memids.push(tile.id);
+			if(values[0] == values[1]){
+			/* if 2 identical value positions are remembered and clicked, let the numbers stay and do not flip tiles*/ 
+				tflipped += 2;
+				// Clear both arrays
+				values = [];
+            			memids = [];
+				// Check to see if the whole board is cleared
+				if(tflipped == memarray.length){
+					alert("Board cleared... generating new board");
+					document.getElementById('board').innerHTML = "";
+					nBoard();
+				}
+			} else {
+				function goBack(){
+				    //Flip the 2 tiles back over
+				    var tile_1 = document.getElementById(memids[0]);
+				    var tile_2 = document.getElementById(memids[1]);
+				    
+            	    		    tile_1.innerHTML = "";
+				    
+            	    		    tile_2.innerHTML = "";
+				    // Clear both arrays
+				    values = [];
+		            	    memids = [];
+				}
+				setTimeout(goBack, 1000);
+			}
+		}
+	}
+}
+</script>
+</head>
+<body>
+<div id="board"></div>
+<script>nBoard();</script>
+</body>
+</html>
